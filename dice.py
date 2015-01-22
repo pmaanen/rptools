@@ -38,6 +38,28 @@ class weapon:
         self.fightingbonus=fightingbonus
         self.damagebonus=damagebonus
         self.name=name
+
+class swWeapon():
+    def __init__(self,name,damage=[],fixed=[],atkb=0):
+        self.name=name
+        self.damage=damage
+        self.fixed=fixed
+        self.atkb=atkb
+    def attack(self,TN=4,Skill=4):
+        atk=die.roll1dX(Skill,True)+self.atkb
+        if atk>TN:
+            return self.do_damage()
+        if atk>TN+3:
+            return self.do_damage(True)
+        return 0
+    def do_damage(self,Raise=False):
+        dam=0
+        for ddie in self.damage:
+            dam+=die.roll1dX(ddie,True)
+            if Raise == True:
+                dam+=die.roll1dX(6,True)
+            dam+=self.fixed
+        return dam
   
 class pfWeapon():
     def __init__(self,name,attacks=[],dice=[],fixeddamage=0,critrange=1,critmult=2,prec_dice=[]):
