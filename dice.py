@@ -1,4 +1,5 @@
 import numpy.random as npr
+from ROOT import TText
 
 class die:
     def __init__(self):
@@ -29,6 +30,13 @@ class die:
             result+=die.roll1dX(X,exploding)
         return result
 
+    @staticmethod
+    def showNdX(N,X,exploding=False):
+        myText=TText(0.4,0.4,str(die.rollNdX(N,X,exploding=False)))
+        myText.SetTextSize(1.1)
+        return myText
+        
+        
     
 class weapon:
     def __init__(self,name,str,ndice,dietype,damagebonus=0,fightingbonus=0):
