@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 from ROOT import TCanvas,TH1F,TH2F,TGraphErrors
 import numpy as np
 import math

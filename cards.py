@@ -51,7 +51,7 @@ class card:
             return (not self.__lt(other))
 
     def __eq__(self,other):
-        return selt.__gt__(other)==0
+        return self.__gt__(other)==0
     
     def __str__(self):
         # Return a string description of ourself
