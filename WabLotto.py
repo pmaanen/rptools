@@ -7,4 +7,4 @@ for i in range(9):
     numbers.append(pool.pop(die.roll1dX(len(pool))-1))
 
 for i in range(3):
-    print numbers[3*i],numbers[3*i+1],numbers[3*i+2]
+    print "Dr Karl, mach mir bitte einen Lottoschein mit den Nummern",numbers[3*i],numbers[3*i+1],numbers[3*i+2]
